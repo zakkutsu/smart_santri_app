@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import '../../widgets/common/app_footer.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -258,7 +259,8 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
 
-            const SizedBox(height: 50),
+            // Footer
+            const AppFooter(),
           ],
         ),
       ),
