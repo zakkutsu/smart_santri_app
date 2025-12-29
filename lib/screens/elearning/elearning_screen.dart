@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class HalamanElearning extends StatelessWidget {
-  const HalamanElearning({super.key});
+class ElearningScreen extends StatelessWidget {
+  const ElearningScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +11,10 @@ class HalamanElearning extends StatelessWidget {
         title: const Text("E-Learning Santri"),
         backgroundColor: Colors.blue[800],
         foregroundColor: Colors.white,
-        leading: IconButton(onPressed: () => context.pop(), icon: const Icon(Icons.arrow_back)),
+        leading: IconButton(
+          onPressed: () => context.pop(),
+          icon: const Icon(Icons.arrow_back),
+        ),
       ),
       body: ListView(
         padding: const EdgeInsets.all(15),
@@ -19,9 +22,9 @@ class HalamanElearning extends StatelessWidget {
           _kategoriMapel("Fiqih & Ibadah", Icons.mosque, Colors.green),
           _itemMateri("Cara Wudhu yang Benar", "Video • 10 Menit"),
           _itemMateri("Rukun Shalat Fardhu", "PDF • 5 Halaman"),
-          
+
           const SizedBox(height: 20),
-          
+
           _kategoriMapel("Bahasa Arab", Icons.translate, Colors.orange),
           _itemMateri("Percakapan Sehari-hari (Hiwar)", "Audio • 15 Menit"),
           _itemMateri("Kosa Kata (Mufradat) Bab 1", "PDF • 3 Halaman"),
@@ -37,7 +40,10 @@ class HalamanElearning extends StatelessWidget {
         children: [
           Icon(icon, color: warna),
           const SizedBox(width: 10),
-          Text(judul, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+          Text(
+            judul,
+            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          ),
         ],
       ),
     );
@@ -48,7 +54,10 @@ class HalamanElearning extends StatelessWidget {
       child: ListTile(
         leading: Container(
           padding: const EdgeInsets.all(8),
-          decoration: BoxDecoration(color: Colors.grey[100], borderRadius: BorderRadius.circular(5)),
+          decoration: BoxDecoration(
+            color: Colors.grey[100],
+            borderRadius: BorderRadius.circular(5),
+          ),
           child: const Icon(Icons.play_circle_fill, color: Colors.blue),
         ),
         title: Text(judul),

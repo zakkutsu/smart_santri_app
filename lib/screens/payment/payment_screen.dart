@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class HalamanSPP extends StatelessWidget {
-  const HalamanSPP({super.key});
+class PaymentScreen extends StatelessWidget {
+  const PaymentScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +11,10 @@ class HalamanSPP extends StatelessWidget {
         title: const Text("Info Pembayaran"),
         backgroundColor: const Color(0xFF1B5E20),
         foregroundColor: Colors.white,
-        leading: IconButton(onPressed: () => context.pop(), icon: const Icon(Icons.arrow_back)),
+        leading: IconButton(
+          onPressed: () => context.pop(),
+          icon: const Icon(Icons.arrow_back),
+        ),
       ),
       body: ListView(
         padding: const EdgeInsets.all(20),
@@ -19,15 +22,31 @@ class HalamanSPP extends StatelessWidget {
           // Kartu Tagihan
           Card(
             color: Colors.orange[50],
-            shape: RoundedRectangleBorder(side: BorderSide(color: Colors.orange.shade200), borderRadius: BorderRadius.circular(10)),
+            shape: RoundedRectangleBorder(
+              side: BorderSide(color: Colors.orange.shade200),
+              borderRadius: BorderRadius.circular(10),
+            ),
             child: Padding(
               padding: const EdgeInsets.all(20),
               child: Column(
                 children: [
-                  const Text("Tagihan Bulan Ini", style: TextStyle(color: Colors.grey)),
+                  const Text(
+                    "Tagihan Bulan Ini",
+                    style: TextStyle(color: Colors.grey),
+                  ),
                   const SizedBox(height: 5),
-                  const Text("Rp 350.000", style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold, color: Colors.red)),
-                  const Text("Jatuh tempo: 10 Des 2025", style: TextStyle(fontSize: 12)),
+                  const Text(
+                    "Rp 350.000",
+                    style: TextStyle(
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.red,
+                    ),
+                  ),
+                  const Text(
+                    "Jatuh tempo: 10 Des 2025",
+                    style: TextStyle(fontSize: 12),
+                  ),
                   const SizedBox(height: 15),
                   SizedBox(
                     width: double.infinity,
@@ -35,15 +54,20 @@ class HalamanSPP extends StatelessWidget {
                       onPressed: () {},
                       icon: const Icon(Icons.payment),
                       label: const Text("Bayar Sekarang"),
-                      style: ElevatedButton.styleFrom(backgroundColor: Colors.green),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.green,
+                      ),
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
           ),
           const SizedBox(height: 20),
-          const Text("Riwayat Transaksi", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
+          const Text(
+            "Riwayat Transaksi",
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+          ),
           const SizedBox(height: 10),
           // List Riwayat
           _itemRiwayat("SPP November 2025", "05 Nov 2025", "Rp 350.000", true),
@@ -58,10 +82,16 @@ class HalamanSPP extends StatelessWidget {
     return Card(
       margin: const EdgeInsets.only(bottom: 10),
       child: ListTile(
-        leading: Icon(Icons.check_circle, color: lunas ? Colors.green : Colors.grey),
+        leading: Icon(
+          Icons.check_circle,
+          color: lunas ? Colors.green : Colors.grey,
+        ),
         title: Text(judul, style: const TextStyle(fontWeight: FontWeight.bold)),
         subtitle: Text(tgl),
-        trailing: Text(nominal, style: const TextStyle(fontWeight: FontWeight.bold)),
+        trailing: Text(
+          nominal,
+          style: const TextStyle(fontWeight: FontWeight.bold),
+        ),
       ),
     );
   }

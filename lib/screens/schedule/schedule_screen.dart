@@ -1,19 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class HalamanJadwal extends StatefulWidget {
-  const HalamanJadwal({super.key});
+class ScheduleScreen extends StatefulWidget {
+  const ScheduleScreen({super.key});
 
   @override
-  State<HalamanJadwal> createState() => _HalamanJadwalState();
+  State<ScheduleScreen> createState() => _ScheduleScreenState();
 }
 
-class _HalamanJadwalState extends State<HalamanJadwal> {
+class _ScheduleScreenState extends State<ScheduleScreen> {
   // DATA DUMMY (CRUD: Read)
   final List<Map<String, String>> _jadwal = [
-    {"kitab": "Kitab Al-Jurumiyah", "waktu": "07:00 - 08:30", "pengajar": "Ust. Abdullah"},
-    {"kitab": "Tafsir Jalalain", "waktu": "16:00 - 17:30", "pengajar": "Kyai Hasan"},
-    {"kitab": "Hadits Arbain", "waktu": "19:30 - 20:30", "pengajar": "Ust. Solmed"},
+    {
+      "kitab": "Kitab Al-Jurumiyah",
+      "waktu": "07:00 - 08:30",
+      "pengajar": "Ust. Abdullah",
+    },
+    {
+      "kitab": "Tafsir Jalalain",
+      "waktu": "16:00 - 17:30",
+      "pengajar": "Kyai Hasan",
+    },
+    {
+      "kitab": "Hadits Arbain",
+      "waktu": "19:30 - 20:30",
+      "pengajar": "Ust. Solmed",
+    },
   ];
 
   // LOGIC: Tambah Jadwal (Create)
@@ -34,9 +46,15 @@ class _HalamanJadwalState extends State<HalamanJadwal> {
         title: const Text("Hapus Jadwal?"),
         content: Text("Hapus kajian ${_jadwal[index]['kitab']}?"),
         actions: [
-          TextButton(onPressed: () => Navigator.pop(ctx), child: const Text("Batal")),
+          TextButton(
+            onPressed: () => Navigator.pop(ctx),
+            child: const Text("Batal"),
+          ),
           ElevatedButton(
-            style: ElevatedButton.styleFrom(backgroundColor: Colors.red, foregroundColor: Colors.white),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.red,
+              foregroundColor: Colors.white,
+            ),
             onPressed: () {
               setState(() {
                 _jadwal.removeAt(index);
@@ -44,7 +62,7 @@ class _HalamanJadwalState extends State<HalamanJadwal> {
               Navigator.pop(ctx);
             },
             child: const Text("Hapus"),
-          )
+          ),
         ],
       ),
     );
@@ -63,18 +81,39 @@ class _HalamanJadwalState extends State<HalamanJadwal> {
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            TextField(controller: kitabCtrl, decoration: const InputDecoration(labelText: "Nama Kitab")),
-            TextField(controller: waktuCtrl, decoration: const InputDecoration(labelText: "Waktu (Cth: 08:00)")),
-            TextField(controller: pengajarCtrl, decoration: const InputDecoration(labelText: "Pengajar")),
+            TextField(
+              controller: kitabCtrl,
+              decoration: const InputDecoration(labelText: "Nama Kitab"),
+            ),
+            TextField(
+              controller: waktuCtrl,
+              decoration: const InputDecoration(
+                labelText: "Waktu (Cth: 08:00)",
+              ),
+            ),
+            TextField(
+              controller: pengajarCtrl,
+              decoration: const InputDecoration(labelText: "Pengajar"),
+            ),
           ],
         ),
         actions: [
-          TextButton(onPressed: () => Navigator.pop(ctx), child: const Text("Batal")),
+          TextButton(
+            onPressed: () => Navigator.pop(ctx),
+            child: const Text("Batal"),
+          ),
           ElevatedButton(
-            style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFF1B5E20), foregroundColor: Colors.white),
-            onPressed: () => _tambahJadwal(kitabCtrl.text, waktuCtrl.text, pengajarCtrl.text),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: const Color(0xFF1B5E20),
+              foregroundColor: Colors.white,
+            ),
+            onPressed: () => _tambahJadwal(
+              kitabCtrl.text,
+              waktuCtrl.text,
+              pengajarCtrl.text,
+            ),
             child: const Text("Simpan"),
-          )
+          ),
         ],
       ),
     );
@@ -105,22 +144,52 @@ class _HalamanJadwalState extends State<HalamanJadwal> {
           return Card(
             elevation: 3,
             margin: const EdgeInsets.only(bottom: 15),
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
+            ),
             child: ListTile(
-              contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              contentPadding: const EdgeInsets.symmetric(
+                horizontal: 20,
+                vertical: 10,
+              ),
               leading: Container(
                 padding: const EdgeInsets.all(10),
-                decoration: BoxDecoration(color: Colors.green[50], borderRadius: BorderRadius.circular(10)),
+                decoration: BoxDecoration(
+                  color: Colors.green[50],
+                  borderRadius: BorderRadius.circular(10),
+                ),
                 child: const Icon(Icons.menu_book, color: Color(0xFF1B5E20)),
               ),
-              title: Text(item['kitab']!, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+              title: Text(
+                item['kitab']!,
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                ),
+              ),
               subtitle: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const SizedBox(height: 5),
-                  Row(children: [const Icon(Icons.access_time, size: 14, color: Colors.grey), const SizedBox(width: 5), Text(item['waktu']!)]),
+                  Row(
+                    children: [
+                      const Icon(
+                        Icons.access_time,
+                        size: 14,
+                        color: Colors.grey,
+                      ),
+                      const SizedBox(width: 5),
+                      Text(item['waktu']!),
+                    ],
+                  ),
                   const SizedBox(height: 2),
-                  Row(children: [const Icon(Icons.person, size: 14, color: Colors.grey), const SizedBox(width: 5), Text(item['pengajar']!)]),
+                  Row(
+                    children: [
+                      const Icon(Icons.person, size: 14, color: Colors.grey),
+                      const SizedBox(width: 5),
+                      Text(item['pengajar']!),
+                    ],
+                  ),
                 ],
               ),
               trailing: IconButton(

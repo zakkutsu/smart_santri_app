@@ -1,14 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class HalamanUnitUsaha extends StatelessWidget {
-  const HalamanUnitUsaha({super.key});
+class BusinessScreen extends StatelessWidget {
+  const BusinessScreen({super.key});
 
   final List<Map<String, dynamic>> _produkSantri = const [
-    {"nama": "Kaligrafi Ukir Kayu", "harga": "Rp 250.000", "karya": "Kelas 12 MA", "color": Colors.brown},
-    {"nama": "Roti Manis Al-Barokah", "harga": "Rp 5.000", "karya": "Ekskul Tata Boga", "color": Colors.orange},
-    {"nama": "Peci Rajut Manual", "harga": "Rp 35.000", "karya": "Santri Putri", "color": Colors.teal},
-    {"nama": "Jasa Desain Poster", "harga": "Rp 50.000", "karya": "Multimedia Club", "color": Colors.blue},
+    {
+      "nama": "Kaligrafi Ukir Kayu",
+      "harga": "Rp 250.000",
+      "karya": "Kelas 12 MA",
+      "color": Colors.brown,
+    },
+    {
+      "nama": "Roti Manis Al-Barokah",
+      "harga": "Rp 5.000",
+      "karya": "Ekskul Tata Boga",
+      "color": Colors.orange,
+    },
+    {
+      "nama": "Peci Rajut Manual",
+      "harga": "Rp 35.000",
+      "karya": "Santri Putri",
+      "color": Colors.teal,
+    },
+    {
+      "nama": "Jasa Desain Poster",
+      "harga": "Rp 50.000",
+      "karya": "Multimedia Club",
+      "color": Colors.blue,
+    },
   ];
 
   @override
@@ -18,7 +38,10 @@ class HalamanUnitUsaha extends StatelessWidget {
         title: const Text("Unit Usaha Santri"),
         backgroundColor: Colors.amber[700], // Warna Emas/Kewirausahaan
         foregroundColor: Colors.white,
-        leading: IconButton(onPressed: () => context.pop(), icon: const Icon(Icons.arrow_back)),
+        leading: IconButton(
+          onPressed: () => context.pop(),
+          icon: const Icon(Icons.arrow_back),
+        ),
       ),
       body: Column(
         children: [
@@ -34,7 +57,10 @@ class HalamanUnitUsaha extends StatelessWidget {
                 const Expanded(
                   child: Text(
                     "Dari Santri, Oleh Santri, Untuk Mandiri.",
-                    style: TextStyle(fontStyle: FontStyle.italic, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                      fontStyle: FontStyle.italic,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ],
@@ -49,26 +75,44 @@ class HalamanUnitUsaha extends StatelessWidget {
                 final item = _produkSantri[index];
                 return Card(
                   elevation: 3,
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15),
+                  ),
                   child: ListTile(
                     contentPadding: const EdgeInsets.all(10),
                     leading: Container(
-                      width: 60, height: 60,
-                      decoration: BoxDecoration(color: item['color'][100], borderRadius: BorderRadius.circular(10)),
+                      width: 60,
+                      height: 60,
+                      decoration: BoxDecoration(
+                        color: item['color'][100],
+                        borderRadius: BorderRadius.circular(10),
+                      ),
                       child: Icon(Icons.shopping_bag, color: item['color']),
                     ),
-                    title: Text(item['nama'], style: const TextStyle(fontWeight: FontWeight.bold)),
+                    title: Text(
+                      item['nama'],
+                      style: const TextStyle(fontWeight: FontWeight.bold),
+                    ),
                     subtitle: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text("Karya: ${item['karya']}"),
                         const SizedBox(height: 5),
-                        Text(item['harga'], style: TextStyle(color: Colors.green[700], fontWeight: FontWeight.bold)),
+                        Text(
+                          item['harga'],
+                          style: TextStyle(
+                            color: Colors.green[700],
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
                       ],
                     ),
                     trailing: ElevatedButton(
                       onPressed: () {},
-                      style: ElevatedButton.styleFrom(backgroundColor: Colors.amber[700], foregroundColor: Colors.white),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.amber[700],
+                        foregroundColor: Colors.white,
+                      ),
                       child: const Text("Beli"),
                     ),
                   ),
