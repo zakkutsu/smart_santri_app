@@ -196,7 +196,7 @@ dev_dependencies:
 
 1. **Clone Repository**
    ```bash
-   git clone https://github.com/username/smart_santri_app.git
+   git clone https://github.com/zakkutsu/smart_santri_app.git
    cd smart_santri_app
    ```
 
@@ -573,7 +573,7 @@ Kami terbuka untuk kontribusi dari siapa saja! Berikut cara berkontribusi:
 1. **Fork** repository ini
 2. **Clone** fork Anda
    ```bash
-   git clone https://github.com/YOUR_USERNAME/smart_santri_app.git
+   git clone https://github.com/zakkutsu/smart_santri_app.git
    cd smart_santri_app
    ```
 3. **Create branch** untuk fitur baru
@@ -684,10 +684,10 @@ SOFTWARE.
 - Modul Smart Village - Peningkatan Perekonomian Masyarakat Desa
 
 **Contributors:**
-- Lead Developer: [Your Name]
-- UI/UX Designer: [Designer Name]
-- Backend Engineer: [Backend Name]
-- QA Tester: [Tester Name]
+- Lead Developer: [olaceholder]
+- UI/UX Designer: [placeholder]
+- Backend Engineer: [placeholder]
+- QA Tester: [placeholder]
 
 ---
 
@@ -700,8 +700,8 @@ SOFTWARE.
 - 📍 Alamat: Jl. Pesantren No. 123, Kota, Provinsi
 
 **Developer Team**
-- 💻 GitHub Issues: [Report Bug](https://github.com/username/smart_santri_app/issues)
-- 💬 Discussions: [Feature Request](https://github.com/username/smart_santri_app/discussions)
+- 💻 GitHub Issues: [Report Bug](https://github.com/zakkutsu/smart_santri_app/issues)
+- 💬 Discussions: [Feature Request](https://github.com/zakkutsu/smart_santri_app/discussions)
 - 📧 Developer Email: dev@smartsantri.id (placeholder)
 
 **Social Media**
